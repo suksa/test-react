@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Swiper from 'react-id-swiper';
+import 'swiper/css/swiper.css';
 
-function App() {
+const App = () => {
+  const params = {
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Swiper {...params}>
+      <div>Slide #1</div>
+      <div>Slide #2</div>
+      <div>Slide #3</div>
+      <div>Slide #4</div>
+      <div>Slide #5</div>
+    </Swiper>
+  )
+};
 
 export default App;
